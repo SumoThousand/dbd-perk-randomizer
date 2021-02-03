@@ -153,6 +153,46 @@
       ]
     },
     {
+      "name": "Yui",
+      "perks": [
+        "lucky break",
+        "any means necessary",
+        "breakout"
+      ]
+    },
+    {
+      "name": "Zarina",
+      "perks": [
+        "off the record",
+        "red herring",
+        "for the people"
+      ]
+    },
+    {
+      "name": "Cheryl",
+      "perks": [
+        "soul guard",
+        "blood pact",
+        "repressed alliance"
+      ]
+    },
+    {
+      "name": "Felix",
+      "perks": [
+        "visionary",
+        "desperate measures",
+        "built to last"
+      ]
+    },
+    {
+      "name": "Elodie",
+      "perks": [
+        "appraisal",
+        "deception",
+        "power struggle"
+      ]
+    },
+    {
       "name": "all",
       "perks": [
         "we'll make it",
