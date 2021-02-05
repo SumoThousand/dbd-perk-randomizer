@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-var survivorPerksObject = require("./perks/survivor-perks.json");
-var killerPerksObject = require("./perks/killer-perks.json")
+var perksObject = require("./perks.json");
 
 var perks;
 var myArgs = process.argv.slice(2);
@@ -9,10 +8,10 @@ var perkSlots = 4;
 
 switch (myArgs[0]) {
   case 'survivor':
-    perks = survivorPerksObject.perks;
+    perks = perksObject["survivor"];
     break;
   case 'killer':
-    perks = killerPerksObject.perks;
+    perks = perksObject["killer"];
     break;
   default:
     console.log("please add either survivor or killer as the argument");
@@ -24,13 +23,11 @@ function getRandomInt(max) {
 }
 
 function getRandomPerk() {
-  // test that this returns only one perk.
   var perkCount = perks.length - 1;
   return perks[getRandomInt(perkCount)];
 }
 
 function getRandomPerks() {
-  // test that this returns an array of 4 (perkSlots) perks.
   var perks = [];
   if (new Set(perks).length != perkSlots);
     while (perks.length != perkSlots) {
@@ -40,7 +37,6 @@ function getRandomPerks() {
 }
 
 function noDuplicatePerks(perks) {
-  // test no duplicates are returned in the array.
   noDuplicatePerksInObject = new Set(perks);
   perksInArray = Array.from(noDuplicatePerksInObject);
   if (perksInArray.length !== perkSlots) {
@@ -51,7 +47,6 @@ function noDuplicatePerks(perks) {
 }
 
 function getPerks() {
-  // test that 4 (perkSlots) unique perks return
   randomPerks = getRandomPerks()
   while (noDuplicatePerks(randomPerks) == false) {
     randomPerks = getRandomPerks();
