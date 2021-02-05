@@ -42,7 +42,7 @@ function getPerks() {
   while (noDuplicateSurvivorPerks(randomSurvivorPerks) == false) {
     randomSurvivorPerks = getRandomSurvivorPerks();
   }
-  console.log(randomSurvivorPerks);
+  console.log(randomSurvivorPerks.sort());
   return randomSurvivorPerks;
 }
 
