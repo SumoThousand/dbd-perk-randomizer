@@ -1,11 +1,23 @@
 #!/usr/bin/env node
 
-var obj = require("./perks/survivor-perks.json");
-var objKiller = require("./perks/killer-perks.json")
+var survivorPerksObject = require("./perks/survivor-perks.json");
+var killerPerksObject = require("./perks/killer-perks.json")
 
-var perks = obj.perks;
-var perkCount = perks.length - 1;
+var perks;
+var myArgs = process.argv.slice(2);
 var perkSlots = 4;
+
+switch (myArgs[0]) {
+  case 'survivor':
+    perks = survivorPerksObject.perks;
+    break;
+  case 'killer':
+    perks = killerPerksObject.perks;
+    break;
+  default:
+    console.log("please add either survivor or killer as the argument");
+    process.exit(1);
+}
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -13,6 +25,7 @@ function getRandomInt(max) {
 
 function getRandomPerk() {
   // test that this returns only one perk.
+  var perkCount = perks.length - 1;
   return perks[getRandomInt(perkCount)];
 }
 
